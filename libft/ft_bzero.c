@@ -6,8 +6,23 @@
 /*   By: msagna <msagna@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 21:56:44 by msagna            #+#    #+#             */
-/*   Updated: 2022/10/13 22:16:11 by msagna           ###   ########.fr       */
+/*   Updated: 2022/10/26 22:25:17 by msagna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+void	ft_bzero(void *s, size_t n)
+{
+	int	i;
+	char	*string;
+
+	i = 0;
+	string = (char *)s;
+	if (n != 0)
+		while (i < n)
+		{
+			string[i] = '\0';
+			i++;
+		}
+}
