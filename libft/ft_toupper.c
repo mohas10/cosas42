@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msagna <msagna@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/25 18:17:54 by msagna            #+#    #+#             */
-/*   Updated: 2022/11/24 21:21:29 by msagna           ###   ########.fr       */
+/*   Created: 2023/01/20 21:47:54 by msagna            #+#    #+#             */
+/*   Updated: 2023/01/20 22:34:34 by msagna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-size_t	ft_strlen(const char s[])
+#include <ctype.h>
+
+int	ft_toupper(int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	if (c >= 97 && c <= 122)
+	return (c - 32);
 }

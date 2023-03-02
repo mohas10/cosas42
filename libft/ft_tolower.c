@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msagna <msagna@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/25 18:17:54 by msagna            #+#    #+#             */
-/*   Updated: 2022/11/24 21:21:29 by msagna           ###   ########.fr       */
+/*   Created: 2023/01/25 21:40:33 by msagna            #+#    #+#             */
+/*   Updated: 2023/01/25 21:48:05 by msagna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-size_t	ft_strlen(const char s[])
+#include <ctype.h>
+
+int	ft_tolowerr(int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	if (c >= 65  && c <= 90)
+	return (c + 32);
 }

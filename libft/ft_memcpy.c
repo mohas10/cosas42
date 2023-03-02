@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msagna <msagna@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/25 18:17:54 by msagna            #+#    #+#             */
-/*   Updated: 2022/11/24 21:21:29 by msagna           ###   ########.fr       */
+/*   Created: 2022/10/28 17:04:00 by msagna            #+#    #+#             */
+/*   Updated: 2022/11/24 21:26:17 by msagna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "libft.c"
 
-size_t	ft_strlen(const char s[])
+void	ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
+	size_t	i = 0;
+	unsigned	char *dst2;
+	unsigned	char *src2;
+	
+	dst2 = (unsigned char*) dst;
+	src2 = (unsigned char*) src;
+	while	(i < n)
+	{
+		dst2[i] = src2[i];
 		i++;
-	return (i);
+	}
+	return (0);
 }
