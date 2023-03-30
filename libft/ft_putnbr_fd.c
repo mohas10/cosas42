@@ -1,20 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msagna <msagna@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 21:47:54 by msagna            #+#    #+#             */
-/*   Updated: 2023/03/30 16:16:15 by msagna           ###   ########.fr       */
+/*   Created: 2023/03/30 17:02:53 by msagna            #+#    #+#             */
+/*   Updated: 2023/03/30 17:02:58 by msagna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (c >= 97 && c <= 122)
-	return (c - 32);
+	char c;
+
+	if (n == -2147483648)
+		write(fd, "-2147483648", 11);
+	else
+	{
+		if (n < 0)
+		{
+			write(fd, "-", 1);
+			n = -n;
+			ft_putnbr_fd(n, fd);
+		}
+		else if (n < 10)
+		{
+			c = n + '0';
+			write(fd, &c, 1);
+		}
+		else
+		{
+			ft_putnbr_fd(n / 10, fd);
+			c = (n % 10) + '0';
+			write(fd, &c, 1);
+		}
+	}
 }

@@ -6,11 +6,12 @@
 /*   By: msagna <msagna@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 21:40:33 by msagna            #+#    #+#             */
-/*   Updated: 2023/01/25 21:48:05 by msagna           ###   ########.fr       */
+/*   Updated: 2023/03/30 16:15:04 by msagna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ctype.h>
+#include "libft.h"
 
 int	ft_tolowerr(int c)
 {

@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msagna <msagna@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 21:47:54 by msagna            #+#    #+#             */
-/*   Updated: 2023/03/30 16:16:15 by msagna           ###   ########.fr       */
+/*   Created: 2023/03/30 17:01:48 by msagna            #+#    #+#             */
+/*   Updated: 2023/03/30 17:02:11 by msagna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
+
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	ft_putendl_fd(char *s, int fd)
 {
-	if (c >= 97 && c <= 122)
-	return (c - 32);
+	if (!s)
+		return ;
+	while (*s)
+		write(fd, s++, 1);
+	write(fd, "\n", 1);
 }

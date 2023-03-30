@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msagna <msagna@student.42barcelon>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 21:47:54 by msagna            #+#    #+#             */
-/*   Updated: 2023/03/30 16:16:15 by msagna           ###   ########.fr       */
+/*   Created: 2023/03/30 16:55:32 by msagna            #+#    #+#             */
+/*   Updated: 2023/03/30 16:55:51 by msagna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
 #include "libft.h"
 
-int	ft_toupper(int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (c >= 97 && c <= 122)
-	return (c - 32);
+	unsigned int	i;
+	char			*rtn;
+
+	i = 0;
+	if (!s || (!s && !f))
+		return (ft_strdup(""));
+	else if (!f)
+		return (ft_strdup(s));
+	rtn = ft_strdup(s);
+	if (!rtn)
+		return (rtn = NULL);
+	while (s[i])
+	{
+		rtn[i] = (*f)(i, s[i]);
+		i++;
+	}
+	return (rtn);
 }
